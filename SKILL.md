@@ -26,55 +26,10 @@ Order: **load both craft skills → then apply this taste lens on top.**
 - **Iterate fast off screenshots.** They paste a screenshot + "this is off / fix this / feels weird." *Feel* it and fix it; don't explain it away.
 - **Give the why, verified** with current best practice. They say **"revert"** when something regresses — keep diffs reversible, never silently lose a thing they liked.
 
-## Visual language (the look — confirmed across reference designs)
-Their aesthetic is *consistent*, not per-brief. This is the universal look.
+## Visual language — RESET (being remade)
+The visual / aesthetic layer is intentionally **blank** right now. The previous canvas/color, surfaces, shape, typography, layout-architecture guidance and the per-context `reference/` files were cleared, to be rebuilt from better-curated references.
 
-**Before building a specific surface, READ the matching file in `reference/` first** — each has the concrete, category-specific recipe (approximate hexes, radii, proportions) + its own premium-vs-slop guardrails:
-- Landing page / hero / marketing → `reference/landing-pages.md`
-- A single card / widget / modal / component → `reference/elements.md`
-- Desktop app / dashboard / multi-pane UI → `reference/desktop-app.md`
-- Mobile screen / iOS widget → `reference/mobile-app.md`
-
-The sections below are the shared base all four build on.
-
-**Surface architecture — match it to the surface type (a common miss):**
-- **Marketing / landing pages are ARCHITECTURAL** — full-bleed sections and big *bleeding* texture zones: a shader/photo panel that fills a whole half and bleeds to the viewport edges, or the texture as the entire background, with content + a *static* product screenshot floating on top. The hero visual is a ZONE, not an object.
-- **Apps, dashboards, and standalone elements are CARD-based** — the contained "image-header + panel," card-on-card, and squircle-widget patterns below.
-- **Do NOT render a landing-page hero as a small contained floating/tilted card.** That's an app/element instinct on a marketing surface. (See `reference/landing-pages.md`.)
-
-**Canvas & color**
-- **Off-white / warm-grey canvas** (~`#f0efed`), not pure white. Often a subtle **dot-grid** texture on flat panels.
-- **Pastel, soft, light — never neon.** ONE minimal accent per product (green / orange / blue / violet), used sparingly.
-- **"Ink"** (near-black, e.g. `#1f2024`) for primary text + CTAs — pure, no warm tint.
-- Ship **both light and dark.** Dark = charcoal/near-black (or a true-black hero with a single colored radial glow), same pastel + shader treatment — **never a flat grey dark mode.**
-
-**Surfaces — texture over flat (their signature move, and the #1 place builds turn to slop)**
-- Where a default reaches for a solid fill or CSS gradient, **reach for a real shader/generative gradient** (ShaderGradient / Three.js / WebGL / Framer-shaders / mesh / dithered-halftone). **A gradient MUST be: (1) saturated and committed to its hue, (2) directional with a clear focal light source / bloom, (3) a multi-stop MESH, not a 2-stop ramp, (4) carrying visible film grain / noise.** Quarantine it to ONE focal object; keep everything else neutral so it reads as a jewel, not wallpaper.
-- **The test:** if the gradient could be mistaken for a Tailwind `from-purple-100 to-blue-100`, it is slop — saturate it, give it a light source, add grain, or replace it with real photography. **A pale, evenly-lit, grain-free blur is the single most common slop tell** (it's what sank the first test build).
-- **Nature photography & painterly illustration** as emotional surfaces — meadows, mountains, clouds, sunsets, golden-hour, real depth-of-field. Calm, aspirational, fresh; never stocky or CGI. On photo cards, fade the bottom to a color *sampled from the image*, not black.
-- **Glassmorphism** for floating overlays only (frosted blur + a top highlight) — a garnish, never the whole surface.
-
-**Shape & depth**
-- **Generously rounded** everything; strong **iOS-widget squircle** language for self-contained cards.
-- **Pills** for buttons, nav, tags, status badges, filter chips. **Floating pill nav** (active item = an ink pill).
-- **Soft, diffuse shadows** (floating-card-on-off-white) + a 1px hairline ring.
-
-**The signature card: image/shader header + content panel**
-- The dominant pattern across the refs: a card whose **top is a shader or photo** and whose **bottom is a clean white/ink info panel** — flights, real estate, trails, widgets, onboarding, pricing, modals all use it.
-- Variant: a photo **fills the card and fades into a solid color** (green/dark) with white text overlaid.
-- **Card-on-card / merged shapes:** nested cards (white outer → photo inner → info panel), and the "two regions, one continuous silhouette" widget shape (a panel with a notch/tab cut). **The card IS the object** — don't slap an icon on it when the card already is the icon.
-
-**Typography**
-- Big bold sans for most (SF Pro-ish), tight tracking.
-- Signature display treatment: **mixed serif-italic + sans** headlines (a playful editorial mix), with **colored rounded-rect "tag" highlights** boxing key words.
-
-**Components & details**
-- Recognizable **app/brand icons as small rounded tiles** (integrations, agent cards).
-- Small colored **% pills** for stats (+18%); **circle-check checklists** for "what you get" / onboarding.
-- **Ghost + ink button pairs** (secondary ghost pill / primary ink-or-accent pill).
-- Colorful rounded **avatars**. **Icons, not emoji**, in the UI.
-
-**Mood:** premium, calm, soft, optimistic — modern SaaS *with personality*. Never brutalist, never cluttered, never dark-tech-hacker, never AI-slop.
+**Until it's rebuilt:** take all visual direction from the project's brief and the references the user supplies — do **not** invent a default aesthetic, and do not resurrect the old one. Everything else in this skill still applies as normal (quality bar, process, the motion doctrine, animation vocabulary, copy rules, UX correctness).
 
 ## Motion & animation (the heart of it)
 Their loudest signal — **"a LOT of animations, microinteractions, *micro*animations."** But the goal is precise: make the product feel **alive**, under one hard constraint — **alive, never *in the way*.** Motion should be *felt* on almost everything, yet never block, gate, delay, or distract from what the user is actually doing. The target isn't "more motion," it's **"more *life*, zero friction."**
@@ -120,8 +75,8 @@ For a premium macOS desktop *clipboard utility*, the DNA expressed as a set of c
 - **Layout/IA:** "Soft Paper" pastel palette + ink `#1f2024`, baked ShaderGradient card surfaces, **items as list rows** (not cards), **"environments"** as workspaces, a Spotlight-style **summon** panel + floating **tray**, denser/smaller **desktop** fonts.
 - **Motion signatures (do NOT transplant these):** the stamp-of-approval save, pop-from-row drag-out, **cursor-interactive 3D tilt + spotlight** on cards, materialize-from-a-point-of-light, the self-playing typing→stamp loop, zoom-through beat transitions. These fit a dense desktop utility you interact with directly; they are gimmicks on a marketing page or a calm app.
 
-A marketing site or a mobile app gets bigger type, more whitespace, totally different IA, and *its own* fitting motion — but the same soft/pastel/shader/rounded *language*.
+A marketing site or a mobile app gets bigger type, more whitespace, totally different IA, and *its own* fitting motion and visual styling — take the instincts, not quickboard's decisions.
 
 ---
 
-**When in doubt:** make it softer, more textured (reach for a shader, not a flat fill), more rounded, and *far* more animated — then ask *"does this feel premium and magic?"* If not, it isn't done.
+**When in doubt:** make it feel *alive* (the calm micro-motion layer) and ask *"does this feel premium and magic?"* — and pull the **visual** styling from the project's references, since the visual layer here is being remade.
