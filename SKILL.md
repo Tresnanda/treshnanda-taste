@@ -37,6 +37,11 @@ Their aesthetic is *consistent*, not per-brief. This is the universal look.
 
 The sections below are the shared base all four build on.
 
+**Surface architecture — match it to the surface type (a common miss):**
+- **Marketing / landing pages are ARCHITECTURAL** — full-bleed sections and big *bleeding* texture zones: a shader/photo panel that fills a whole half and bleeds to the viewport edges, or the texture as the entire background, with content + a *static* product screenshot floating on top. The hero visual is a ZONE, not an object.
+- **Apps, dashboards, and standalone elements are CARD-based** — the contained "image-header + panel," card-on-card, and squircle-widget patterns below.
+- **Do NOT render a landing-page hero as a small contained floating/tilted card.** That's an app/element instinct on a marketing surface. (See `reference/landing-pages.md`.)
+
 **Canvas & color**
 - **Off-white / warm-grey canvas** (~`#f0efed`), not pure white. Often a subtle **dot-grid** texture on flat panels.
 - **Pastel, soft, light — never neon.** ONE minimal accent per product (green / orange / blue / violet), used sparingly.
