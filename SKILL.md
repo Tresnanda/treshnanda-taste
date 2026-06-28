@@ -1,6 +1,6 @@
 ---
 name: treshnanda-taste
-description: Treshnanda's personal UI/UX taste profile — soft, premium, pastel, shader-textured, generously-rounded surfaces with bold, kinetic, Awwwards-tier motion. Invoke when building or redesigning ANY app or website UI, designing animations/microinteractions, or making layout/visual/copy decisions — and whenever Treshnanda references "their taste," "high taste," "premium," "feels good," "magic," or "make it WOW."
+description: Treshnanda's personal UI/UX taste profile — their working process, a high quality bar, and a bold, kinetic "alive but never in the way" motion doctrine, for building or redesigning any app or website UI. (Visual/aesthetic layer is being rebuilt from new references.) Invoke when building or redesigning ANY app or website UI, designing animations/microinteractions, or making layout/visual/copy decisions — and whenever Treshnanda references "their taste," "high taste," "premium," "feels good," "magic," or "make it WOW."
 ---
 
 # Treshnanda's UI/UX Taste
